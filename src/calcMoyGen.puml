@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant main
+participant Etudiant
+
+main -> Groupe : calcMoyGen()
+Groupe --> main : moyenne
+
+@enduml
