@@ -4,10 +4,10 @@
 class Etudiant{
     - id : Identite
     - form : Formation
-    - resultats : Hashmap<String,Set<float>>
-    + addNote(String mat,float note)
-    + calcMoy(String mat) : float
-    + calcMoyGen() : float
+    - resultats : Hashmap<String,Set<Double>>
+    + addNote(String mat,double note)
+    + calcMoy(String mat) : double
+    + calcMoyGen() : double
 }
 
 class Identite{
