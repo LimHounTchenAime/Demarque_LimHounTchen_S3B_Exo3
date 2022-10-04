@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+main -> Formation : calcMoyMat()
+    Formation -> "mat : Hashmap" : get()
+    "mat : Hashmap" --> Formation : moyenneMat
+Formation --> main : moyenneMat
+
+@enduml
