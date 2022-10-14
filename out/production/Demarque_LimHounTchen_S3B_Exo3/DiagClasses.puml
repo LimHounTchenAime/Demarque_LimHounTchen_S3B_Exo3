@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Etudiant{
+    - id : Identite
+    - form : Formation
+    - resultats : Hashmap<String,Set<float>>
+    + addNote(String mat,float note)
+    + calcmoy(String mat) : float
+    + calcmoygen() : float
+}
+
+class Identite{
+    - String NIP
+    - String nom
+    - String prenom
+}
+
+class Formation{
+    - String idantifiant
+    - Hashmap<String,int> mat
+    + addmat(String nom, int coeff)
+    + supmat(String nom)
+    + getcoeff(String mat) : int
+}
+
+class Groupe{
+    - grp : Hashmap<Etudiant,Formation>
+    + addetu(Etudiant etu)
+    + supetu(Etudiant etu)
+}
+
+Groupe -up-> Etudiant
+Groupe -down-> Formation
+Etudiant -> Formation
+Etudiant -> Identite
+
+
+@enduml
