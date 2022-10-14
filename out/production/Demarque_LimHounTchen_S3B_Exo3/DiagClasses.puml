@@ -4,10 +4,10 @@
 class Etudiant{
     - id : Identite
     - form : Formation
-    - resultats : Hashmap<String,Set<float>>
-    + addNote(String mat,float note)
-    + calcmoy(String mat) : float
-    + calcmoygen() : float
+    - resultats : Hashmap<String,Set<Double>>
+    + addNote(String mat,double note)
+    + calcMoy(String mat) : double
+    + calcMoyGen() : double
 }
 
 class Identite{
@@ -17,17 +17,17 @@ class Identite{
 }
 
 class Formation{
-    - String idantifiant
-    - Hashmap<String,int> mat
-    + addmat(String nom, int coeff)
-    + supmat(String nom)
-    + getcoeff(String mat) : int
+    - String identifiant
+    - Hashmap<String,Integer> mat
+    + addMat(String nom, int coeff)
+    + supMat(String nom)
+    + getCoeff(String mat) : int
 }
 
 class Groupe{
     - grp : Hashmap<Etudiant,Formation>
-    + addetu(Etudiant etu)
-    + supetu(Etudiant etu)
+    + addEtu(Etudiant etu)
+    + supEtu(Etudiant etu)
 }
 
 Groupe -up-> Etudiant

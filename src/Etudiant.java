@@ -43,15 +43,13 @@ public class Etudiant {
     }
 
     public double calcMoyGen(){
-        Set<Double> moys = new HashSet<Double>();
-//        for(String s: this.resultats.keySet()){
-//            moys.add(calcMoyMat(s)*this.form.getCoeff(s));
-//        }
-        double gen = 0.0;
-        for(double d: moys){
-            gen += d;
+        double moys = 0.0;
+        double denom = 0.0;
+        for(String s: this.resultats.keySet()){
+            moys += calcMoyMat(s)*this.form.getCoeff(s);
+            denom += this.form.getCoeff(s);
         }
-        return gen/moys.size();
+        return moys/denom;
     }
 
     public Formation getForm(){

@@ -7,7 +7,7 @@ class FormationTest {
     Formation f;
     @BeforeEach
     public void init(){
-        f=new Formation();
+        f=new Formation("123");
         f.mat.put("histoire", 2.0);
     }
 

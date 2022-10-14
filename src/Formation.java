@@ -1,12 +1,11 @@
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class Formation {
     public String identifiant;
     public HashMap<String, Double> mat;
 
-    public Formation(){
+    public Formation(String id){
+        this.identifiant = id;
         this.mat=new HashMap<String, Double>();
     }
     public void addMat(String nom, double coeff){
