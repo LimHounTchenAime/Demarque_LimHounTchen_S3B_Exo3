@@ -10,7 +10,7 @@ class EtudiantTest {
 
     @BeforeEach
     public void init(){
-        formation=new Formation();
+        formation=new Formation("f1");
         formation.addMat("maths", 2);
         formation.addMat("histoire", 1);
         etudiant=new Etudiant(new Identite("nip", "nom", "prenom"), formation);
