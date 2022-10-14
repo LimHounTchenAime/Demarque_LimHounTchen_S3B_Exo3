@@ -1,3 +1,4 @@
+import java.text.Normalizer;
 import java.util.*;
 
 public class Etudiant {
@@ -10,9 +11,9 @@ public class Etudiant {
         this.form = f;
         Set<Double> s = new HashSet<Double>();
         this.resultats = new HashMap<String, Set<Double>>();
-//        for (String str: this.form.mat.keySet()) {
-//            this.resultats.put(str,s);
-//        }
+        for (String str: this.form.mat.keySet()) {
+            this.resultats.put(str,s);
+        }
     }
 
     public void addNote(String mat, double note){
@@ -51,5 +52,9 @@ public class Etudiant {
             gen += d;
         }
         return gen/moys.size();
+    }
+
+    public Formation getForm(){
+        return this.form;
     }
 }
