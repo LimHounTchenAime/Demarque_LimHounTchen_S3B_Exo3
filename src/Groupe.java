@@ -53,7 +53,9 @@ public class Groupe {
     }
 
     public void triAntiAlpha(){
-        triAlpha();
+        Map<Etudiant, Formation> tmp=new TreeMap<Etudiant, Formation>(Collections.reverseOrder());
+        tmp.putAll(this.grp);
+        this.grp=tmp;
     }
 
     public String toString(){

@@ -69,7 +69,7 @@ class GroupeTest {
         grp.addEtu(e2);
 
 
-        assertEquals(11.125, grp.calcMoyGen());
+        assertEquals(15.357142857142858, grp.calcMoyGen());
     }
 
     @Test
@@ -123,7 +123,7 @@ class GroupeTest {
 
         assertEquals("MonGrp\n" +
                         "\n" +
-                        "Atchoo Snif\n" +
+                        "LimHounTchen Aime\n" +
                         "Java 5.0\n" +
                         "Math 2.0\n" +
                         "\n" +
@@ -131,7 +131,7 @@ class GroupeTest {
                         "Java 5.0\n" +
                         "Math 2.0\n" +
                         "\n" +
-                        "LimHounTchen Aime\n" +
+                        "Atchoo Snif\n" +
                         "Java 5.0\n" +
                         "Math 2.0\n" +
                         "\n"
