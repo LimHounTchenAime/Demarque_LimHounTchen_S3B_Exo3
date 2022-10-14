@@ -71,4 +71,70 @@ class GroupeTest {
 
         assertEquals(11.125, grp.calcMoyGen());
     }
+
+    @Test
+    public void testTriAlpha(){
+        Formation form1 = new Formation("uneFormation");
+        form1.addMat("Math", 2);
+        form1.addMat("Java", 5);
+        Etudiant e1 = new Etudiant(new Identite("A01","Demarque", "Amaury"),form1);
+        Etudiant e2 = new Etudiant(new Identite("LHT02","LimHounTchen","Aime"),form1);
+        Etudiant e3=new Etudiant(new Identite("G5D56", "Atchoo", "Snif"), form1);
+        Groupe grp = new Groupe("MonGrp");
+
+        grp.addEtu(e1);
+        grp.addEtu(e2);
+        grp.addEtu(e3);
+
+        grp.triAlpha();
+
+        assertEquals("MonGrp\n" +
+                        "\n" +
+                        "Atchoo Snif\n" +
+                        "Java 5.0\n" +
+                        "Math 2.0\n" +
+                        "\n" +
+                        "Demarque Amaury\n" +
+                        "Java 5.0\n" +
+                        "Math 2.0\n" +
+                        "\n" +
+                        "LimHounTchen Aime\n" +
+                        "Java 5.0\n" +
+                        "Math 2.0\n" +
+                        "\n"
+                , grp.toString());
+    }
+
+    @Test
+    public void testTriAntiAlpha(){
+        Formation form1 = new Formation("uneFormation");
+        form1.addMat("Math", 2);
+        form1.addMat("Java", 5);
+        Etudiant e1 = new Etudiant(new Identite("A01","Demarque", "Amaury"),form1);
+        Etudiant e2 = new Etudiant(new Identite("LHT02","LimHounTchen","Aime"),form1);
+        Etudiant e3=new Etudiant(new Identite("G5D56", "Atchoo", "Snif"), form1);
+        Groupe grp = new Groupe("MonGrp");
+
+        grp.addEtu(e1);
+        grp.addEtu(e2);
+        grp.addEtu(e3);
+
+        grp.triAntiAlpha();
+
+        assertEquals("MonGrp\n" +
+                        "\n" +
+                        "Atchoo Snif\n" +
+                        "Java 5.0\n" +
+                        "Math 2.0\n" +
+                        "\n" +
+                        "Demarque Amaury\n" +
+                        "Java 5.0\n" +
+                        "Math 2.0\n" +
+                        "\n" +
+                        "LimHounTchen Aime\n" +
+                        "Java 5.0\n" +
+                        "Math 2.0\n" +
+                        "\n"
+                , grp.toString());
+    }
 }

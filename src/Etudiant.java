@@ -1,7 +1,7 @@
 import java.text.Normalizer;
 import java.util.*;
 
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant>{
     private Identite id;
     private Formation form;
     private Map<String, Set<Double>> resultats;
@@ -74,5 +74,11 @@ public class Etudiant {
         return r;
     }
 
-
+    public Identite getId(){
+        return id;
+    }
+    @Override
+    public int compareTo(Etudiant o) {
+        return this.id.getNom().compareTo(o.id.getNom());
+    }
 }

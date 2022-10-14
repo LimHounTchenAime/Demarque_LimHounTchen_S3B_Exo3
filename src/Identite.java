@@ -6,4 +6,12 @@ public class Identite {
         this.nom = n;
         this.prenom = p;
     }
+
+    public String getNom(){
+        return nom;
+    }
+
+    public String getPrenom(){
+        return prenom;
+    }
 }
