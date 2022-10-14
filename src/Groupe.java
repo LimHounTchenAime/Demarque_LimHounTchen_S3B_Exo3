@@ -64,4 +64,17 @@ public class Groupe {
             r+=etudiant.getId().getNom()+" "+etudiant.getId().getPrenom()+"\n"+this.grp.get(etudiant)+"\n";
         return r;
     }
+
+    public void triParMerite(){
+        Map<Etudiant, Double> moyennes=new TreeMap<Etudiant, Double>();
+        for(Etudiant etudiant:this.grp.keySet()){
+            moyennes.put(etudiant, etudiant.calcMoyGen());
+        }
+
+        Map<Etudiant, Formation> map=new TreeMap<Etudiant, Formation>();
+        for(Etudiant etudiant:moyennes.keySet()){
+            map.put(etudiant, etudiant.getForm());
+        }
+        this.grp=map;
+    }
 }

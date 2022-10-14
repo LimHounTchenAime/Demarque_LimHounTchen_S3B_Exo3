@@ -81,4 +81,8 @@ public class Etudiant implements Comparable<Etudiant>{
     public int compareTo(Etudiant o) {
         return this.id.getNom().compareTo(o.id.getNom());
     }
+
+    public Map<String, Set<Double>> getResultats() {
+        return resultats;
+    }
 }
