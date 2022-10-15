@@ -1,7 +1,7 @@
 import java.text.Normalizer;
 import java.util.*;
 
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant>{
     private Identite id;
     private Formation form;
     private Map<String, Set<Double>> resultats;
@@ -16,10 +16,15 @@ public class Etudiant {
         }
     }
 
-    public void addNote(String mat, double note){
+    public void addNote(String mat, Double note){
         if (this.resultats.containsKey(mat)){
-            if(note>=0 && note<20){
-                this.resultats.get(mat).add(note);
+            if(note>=0 && note<=20){
+                Set<Double> s = new HashSet<Double>();
+                for(Double elem:this.resultats.get(mat)){
+                    s.add(elem);
+                }
+                s.add(note);
+                this.resultats.put(mat,s);
                 System.out.println("Note ajouté avec succes");
             } else {
                 System.out.println("La note doit etre entre 0 et 20");
@@ -54,5 +59,30 @@ public class Etudiant {
 
     public Formation getForm(){
         return this.form;
+    }
+
+    public String toString(){
+        String r="";
+        Iterator<String> iteratorMatiere=this.form.mat.keySet().iterator();
+        while(iteratorMatiere.hasNext()){
+            String matiere=iteratorMatiere.next();
+            r+=matiere+":\n";
+            Iterator<Double> iteratorNote = this.resultats.get(matiere).iterator();
+            while (iteratorNote.hasNext())
+                r += "\t" + iteratorNote.next() + "\n";
+        }
+        return r;
+    }
+
+    public Identite getId(){
+        return id;
+    }
+    @Override
+    public int compareTo(Etudiant o) {
+        return this.id.getNom().compareTo(o.id.getNom());
+    }
+
+    public Map<String, Set<Double>> getResultats() {
+        return resultats;
     }
 }
